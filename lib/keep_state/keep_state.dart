@@ -71,6 +71,7 @@ class _KeepPage extends State<KeepPage> with AutomaticKeepAliveClientMixin{
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Scaffold(
       body: Center(
         child: Column(
