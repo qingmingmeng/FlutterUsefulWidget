@@ -55,7 +55,7 @@ class MainHome extends StatelessWidget{
           ),
           Card(
             child: ListTile(
-              title: Text('TableBar + 保持页面状态'),
+              title: Text('TabBar + 保持页面状态'),
               onTap: () => _pageJump(context, KeepState()),
             ),
           ),
