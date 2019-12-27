@@ -4,6 +4,7 @@ import 'package:flutter_actual/bottom_navigation2/bottom_guide2.dart';
 import 'package:flutter_actual/frosted_glass/frosted_glass.dart';
 import 'package:flutter_actual/jump_animation/animation_list.dart';
 import 'package:flutter_actual/search/search.dart';
+import 'package:flutter_actual/wrap/wrap.dart';
 
 import 'keep_state/keep_state.dart';
 
@@ -64,6 +65,12 @@ class MainHome extends StatelessWidget{
             child: ListTile(
               title: Text('搜索框'),
               onTap: () => _pageJump(context, Search()),
+            ),
+          ),
+          Card(
+            child: ListTile(
+              title: Text('Wrap流式布局'),
+              onTap: () => _pageJump(context, WrapWidget()),
             ),
           ),
         ],
