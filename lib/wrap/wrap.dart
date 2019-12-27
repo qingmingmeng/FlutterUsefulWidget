@@ -70,7 +70,6 @@ class _WrapWidgetState extends State<WrapWidget>{
     return GestureDetector(
       onTap: (){
         if(_widgets.length > 2){
-          _count++;
           setState(() {
             _widgets.removeAt(0);
           });
