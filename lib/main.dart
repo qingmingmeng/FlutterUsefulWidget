@@ -3,6 +3,7 @@ import 'package:flutter_actual/bottom_navigation1/bottom_guide1.dart';
 import 'package:flutter_actual/bottom_navigation2/bottom_guide2.dart';
 import 'package:flutter_actual/frosted_glass/frosted_glass.dart';
 import 'package:flutter_actual/jump_animation/animation_list.dart';
+import 'package:flutter_actual/search/search.dart';
 
 import 'keep_state/keep_state.dart';
 
@@ -57,6 +58,12 @@ class MainHome extends StatelessWidget{
             child: ListTile(
               title: Text('TabBar + 保持页面状态'),
               onTap: () => _pageJump(context, KeepState()),
+            ),
+          ),
+          Card(
+            child: ListTile(
+              title: Text('搜索框'),
+              onTap: () => _pageJump(context, Search()),
             ),
           ),
         ],
