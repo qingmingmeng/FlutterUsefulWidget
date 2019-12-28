@@ -11,18 +11,6 @@ import 'expansion/expansion_panel_list.dart';
 import 'expansion/expansion_tile.dart';
 import 'keep_state/keep_state.dart';
 
-void main() => runApp(MainApp());
-
-class MainApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter 实战',
-      home: MainHome(),
-    );
-  }
-}
-
 class MainHome extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
