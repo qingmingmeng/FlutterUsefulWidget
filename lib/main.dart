@@ -6,6 +6,8 @@ import 'package:flutter_actual/jump_animation/animation_list.dart';
 import 'package:flutter_actual/search/search.dart';
 import 'package:flutter_actual/wrap/wrap.dart';
 
+import 'expansion/expansion_panel_list.dart';
+import 'expansion/expansion_tile.dart';
 import 'keep_state/keep_state.dart';
 
 void main() => runApp(MainApp());
@@ -71,6 +73,18 @@ class MainHome extends StatelessWidget{
             child: ListTile(
               title: Text('Wrap流式布局'),
               onTap: () => _pageJump(context, WrapWidget()),
+            ),
+          ),
+          Card(
+            child: ListTile(
+              title: Text('展开闭合(ExpansionTile)'),
+              onTap: () => _pageJump(context, ExpansionTileWidget()),
+            ),
+          ),
+          Card(
+            child: ListTile(
+              title: Text('展开闭合(ExpansionPanelList)'),
+              onTap: () => _pageJump(context, ExpansionPanelListWidget()),
             ),
           ),
         ],
