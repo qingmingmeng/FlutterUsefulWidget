@@ -6,6 +6,7 @@ import 'package:flutter_actual/jump_animation/animation_list.dart';
 import 'package:flutter_actual/search/search.dart';
 import 'package:flutter_actual/wrap/wrap.dart';
 
+import 'bessel/bessel.dart';
 import 'expansion/expansion_panel_list.dart';
 import 'expansion/expansion_tile.dart';
 import 'keep_state/keep_state.dart';
@@ -85,6 +86,12 @@ class MainHome extends StatelessWidget{
             child: ListTile(
               title: Text('展开闭合(ExpansionPanelList)'),
               onTap: () => _pageJump(context, ExpansionPanelListWidget()),
+            ),
+          ),
+          Card(
+            child: ListTile(
+              title: Text('路径切割(贝塞尔曲线)'),
+              onTap: () => _pageJump(context, BesselWidget()),
             ),
           ),
         ],
