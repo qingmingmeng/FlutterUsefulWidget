@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_actual/bottom_navigation1/bottom_guide1.dart';
 import 'package:flutter_actual/bottom_navigation2/bottom_guide2.dart';
 import 'package:flutter_actual/frosted_glass/frosted_glass.dart';
 import 'package:flutter_actual/jump_animation/animation_list.dart';
+import 'package:flutter_actual/right_back/right_back.dart';
 import 'package:flutter_actual/search/search.dart';
 import 'package:flutter_actual/wrap/wrap.dart';
 
@@ -82,14 +84,28 @@ class MainHome extends StatelessWidget{
               onTap: () => _pageJump(context, BesselWidget()),
             ),
           ),
+          Card(
+            child: ListTile(
+              title: Text('右滑返回'),
+              onTap: () => _pageJumpWithRightBack(context,RightBack()),
+            ),
+          ),
         ],
       ),
     );
   }
 }
 
+//普通的页面跳转
 _pageJump(BuildContext context, Widget widget){
   Navigator.push(context, MaterialPageRoute(
-      builder: (context) => widget
+      builder: (context) => widget,
+  ));
+}
+
+//页面跳转，且可以右滑返回，注意，需要从屏幕最左侧滑动才有效果
+_pageJumpWithRightBack(BuildContext context, Widget widget){
+  Navigator.of(context).push(CupertinoPageRoute(
+      builder: (context) => widget,
   ));
 }
