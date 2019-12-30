@@ -90,6 +90,14 @@ class MainHome extends StatelessWidget{
               onTap: () => _pageJumpWithRightBack(context,RightBack()),
             ),
           ),
+          Card(
+            child: Tooltip(
+              message: '这是一个轻量级提示',
+              child: ListTile(
+                title: Text('长按轻量级提示'),
+              ),
+            ),
+          ),
         ],
       ),
     );
