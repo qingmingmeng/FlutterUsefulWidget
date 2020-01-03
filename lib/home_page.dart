@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_actual/bottom_navigation1/bottom_guide1.dart';
 import 'package:flutter_actual/bottom_navigation2/bottom_guide2.dart';
+import 'package:flutter_actual/data_save_and_read/data_save_and_read.dart';
 import 'package:flutter_actual/drag/drag.dart';
 import 'package:flutter_actual/frosted_glass/frosted_glass.dart';
 import 'package:flutter_actual/jump_animation/animation_list.dart';
@@ -103,6 +104,12 @@ class MainHome extends StatelessWidget{
             child: ListTile(
               title: Text('拖动效果'),
               onTap: () => _pageJumpWithRightBack(context,Drag()),
+            ),
+          ),
+          Card(
+            child: ListTile(
+              title: Text('数据保存与读取'),
+              onTap: () => _pageJumpWithRightBack(context,DataSaveAndRead()),
             ),
           ),
         ],
