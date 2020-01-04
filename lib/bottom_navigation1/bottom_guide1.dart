@@ -40,35 +40,25 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget>{
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home,
-              color: _bottomNavigationColor,
-            ),
-            title: Text('Home', style: TextStyle(color: _bottomNavigationColor),),
+            icon: Icon(Icons.home,),
+            title: Text('Home',),
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.email,
-              color: _bottomNavigationColor,
-            ),
-            title: Text('Email', style: TextStyle(color: _bottomNavigationColor),),
+            icon: Icon(Icons.email,),
+            title: Text('Email',),
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.pages,
-              color: _bottomNavigationColor,
-            ),
-            title: Text('Pages', style: TextStyle(color: _bottomNavigationColor),),
+            icon: Icon(Icons.pages,),
+            title: Text('Pages',),
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.airplay,
-              color: _bottomNavigationColor,
-            ),
-            title: Text('Airplay', style: TextStyle(color: _bottomNavigationColor),),
+            icon: Icon(Icons.airplay,),
+            title: Text('Airplay',),
           ),
         ],
+        type: BottomNavigationBarType.fixed,//底部数量超过三个，需要定义type
         currentIndex: _currentIndex,
+        fixedColor: _bottomNavigationColor,
         onTap: (index){
           setState(() {
             _currentIndex = index;
