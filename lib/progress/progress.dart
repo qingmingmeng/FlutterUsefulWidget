@@ -82,8 +82,8 @@ class ProgressState extends State<Progress>{
 
   //倒计时方法
   void _startCountdownTimer() {
-    const oneSec = const Duration(milliseconds: 10);
-    var callback = (timer) => {
+    const duration = const Duration(milliseconds: 10);
+    var onCountDown = (timer) => {
       setState(() {
         if(_value < 1){
           _value += 0.001;
@@ -92,7 +92,7 @@ class ProgressState extends State<Progress>{
         }
       })
     };
-    _timer = Timer.periodic(oneSec, callback);
+    _timer = Timer.periodic(duration, onCountDown);
   }
 
   @override
