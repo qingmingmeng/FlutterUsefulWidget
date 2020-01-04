@@ -6,6 +6,7 @@ import 'package:flutter_actual/data_save_and_read/data_save_and_read.dart';
 import 'package:flutter_actual/drag/drag.dart';
 import 'package:flutter_actual/frosted_glass/frosted_glass.dart';
 import 'package:flutter_actual/jump_animation/animation_list.dart';
+import 'package:flutter_actual/my_drawer.dart';
 import 'package:flutter_actual/progress/progress.dart';
 import 'package:flutter_actual/right_back/right_back.dart';
 import 'package:flutter_actual/search/search.dart';
@@ -25,66 +26,67 @@ class MainHome extends StatelessWidget{
         centerTitle: true,
         elevation: 0.0,//阴影效果，0.0标识没有阴影
       ),
+      drawer: MyDrawer(),//左滑抽屉
       body: ListView(
         children: <Widget>[
           Card(
             child: ListTile(
               title: Text('底部导航栏1'),
-              onTap: () => _pageJump(context, BottomGuide1()),
+              onTap: () => _pageJumpWithRightBack(context, BottomGuide1()),
             ),
           ),
           Card(
             child: ListTile(
               title: Text('底部导航栏2'),
-              onTap: () => _pageJump(context, BottomGuide2()),
+              onTap: () => _pageJumpWithRightBack(context, BottomGuide2()),
             ),
           ),
           Card(
             child: ListTile(
               title: Text('跳转动画'),
-              onTap: () => _pageJump(context, AnimationList()),
+              onTap: () => _pageJumpWithRightBack(context, AnimationList()),
             ),
           ),
           Card(
             child: ListTile(
               title: Text('磨砂玻璃效果'),
-              onTap: () => _pageJump(context, FrostedGlass()),
+              onTap: () => _pageJumpWithRightBack(context, FrostedGlass()),
             ),
           ),
           Card(
             child: ListTile(
               title: Text('TabBar + 保持页面状态'),
-              onTap: () => _pageJump(context, KeepState()),
+              onTap: () => _pageJumpWithRightBack(context, KeepState()),
             ),
           ),
           Card(
             child: ListTile(
               title: Text('搜索框'),
-              onTap: () => _pageJump(context, Search()),
+              onTap: () => _pageJumpWithRightBack(context, Search()),
             ),
           ),
           Card(
             child: ListTile(
               title: Text('Wrap流式布局'),
-              onTap: () => _pageJump(context, WrapWidget()),
+              onTap: () => _pageJumpWithRightBack(context, WrapWidget()),
             ),
           ),
           Card(
             child: ListTile(
               title: Text('展开闭合(ExpansionTile)'),
-              onTap: () => _pageJump(context, ExpansionTileWidget()),
+              onTap: () => _pageJumpWithRightBack(context, ExpansionTileWidget()),
             ),
           ),
           Card(
             child: ListTile(
               title: Text('展开闭合(ExpansionPanelList)'),
-              onTap: () => _pageJump(context, ExpansionPanelListWidget()),
+              onTap: () => _pageJumpWithRightBack(context, ExpansionPanelListWidget()),
             ),
           ),
           Card(
             child: ListTile(
               title: Text('路径切割(贝塞尔曲线)'),
-              onTap: () => _pageJump(context, BesselWidget()),
+              onTap: () => _pageJumpWithRightBack(context, BesselWidget()),
             ),
           ),
           Card(
