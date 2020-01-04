@@ -6,6 +6,7 @@ import 'package:flutter_actual/data_save_and_read/data_save_and_read.dart';
 import 'package:flutter_actual/drag/drag.dart';
 import 'package:flutter_actual/frosted_glass/frosted_glass.dart';
 import 'package:flutter_actual/jump_animation/animation_list.dart';
+import 'package:flutter_actual/progress/progress.dart';
 import 'package:flutter_actual/right_back/right_back.dart';
 import 'package:flutter_actual/search/search.dart';
 import 'package:flutter_actual/wrap/wrap.dart';
@@ -110,6 +111,12 @@ class MainHome extends StatelessWidget{
             child: ListTile(
               title: Text('数据保存与读取'),
               onTap: () => _pageJumpWithRightBack(context,DataSaveAndRead()),
+            ),
+          ),
+          Card(
+            child: ListTile(
+              title: Text('进度条'),
+              onTap: () => _pageJumpWithRightBack(context,Progress()),
             ),
           ),
         ],
