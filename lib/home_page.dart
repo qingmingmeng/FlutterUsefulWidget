@@ -168,7 +168,7 @@ class _MainHomeState extends State<MainHome>{
         DateTime.now().difference(_lastPressedAt) > Duration(seconds: 1)){
       //两次点击间隔超过1秒则重新计时
       _lastPressedAt = DateTime.now();
-      _showToast('双击退出');
+      _showToast('再点一次退出');
       return Future.value(false);
     }
     return Future.value(true);
