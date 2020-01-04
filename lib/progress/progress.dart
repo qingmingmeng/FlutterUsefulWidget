@@ -80,6 +80,7 @@ class ProgressState extends State<Progress>{
     );
   }
 
+  //倒计时方法
   void _startCountdownTimer() {
     const oneSec = const Duration(milliseconds: 10);
     var callback = (timer) => {
