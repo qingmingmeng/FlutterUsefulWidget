@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_actual/bottom_navigation1/bottom_guide1.dart';
 import 'package:flutter_actual/bottom_navigation2/bottom_guide2.dart';
 import 'package:flutter_actual/data_save_and_read/data_save_and_read.dart';
+import 'package:flutter_actual/dialog/dialog.dart';
 import 'package:flutter_actual/drag/drag.dart';
 import 'package:flutter_actual/frosted_glass/frosted_glass.dart';
 import 'package:flutter_actual/jump_animation/animation_list.dart';
@@ -131,6 +132,12 @@ class _MainHomeState extends State<MainHome>{
               child: ListTile(
                 title: Text('进度条'),
                 onTap: () => _pageJumpWithRightBack(context,Progress()),
+              ),
+            ),
+            Card(
+              child: ListTile(
+                title: Text('Dialog样式'),
+                onTap: () => _pageJumpWithRightBack(context,DialogWidget()),
               ),
             ),
           ],
