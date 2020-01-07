@@ -5,6 +5,7 @@ import 'package:flutter_actual/bottom_navigation2/bottom_guide2.dart';
 import 'package:flutter_actual/data_save_and_read/data_save_and_read.dart';
 import 'package:flutter_actual/dialog/dialog.dart';
 import 'package:flutter_actual/drag/drag.dart';
+import 'package:flutter_actual/event_bus/event_bus_usage.dart';
 import 'package:flutter_actual/frosted_glass/frosted_glass.dart';
 import 'package:flutter_actual/jump_animation/animation_list.dart';
 import 'package:flutter_actual/my_drawer.dart';
@@ -138,6 +139,12 @@ class _MainHomeState extends State<MainHome>{
               child: ListTile(
                 title: Text('Dialog样式'),
                 onTap: () => _pageJumpWithRightBack(context,DialogWidget()),
+              ),
+            ),
+            Card(
+              child: ListTile(
+                title: Text('消息总线EventBus'),
+                onTap: () => _pageJumpWithRightBack(context,EventBusUsage()),
               ),
             ),
           ],
