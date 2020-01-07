@@ -23,112 +23,114 @@ class _DialogWidgetState extends State<DialogWidget> {
       ),
       body: Padding(
         padding: const EdgeInsets.only(left: 20),
-        child: Column(
-          children: <Widget>[
-            RaisedButton(
-              child: Text('普通对话框'),
-              onPressed: () async {
-                bool sure = await showNormalDialog(context);
-                Fluttertoast.showToast(
-                    msg: sure ? '点击了确定' : '点击了取消',
-                    toastLength: Toast.LENGTH_SHORT,
-                    gravity: ToastGravity.BOTTOM);
-              },
-            ),
-            RaisedButton(
-              child: Text('选择对话框'),
-              onPressed: () async {
-                int position = await showChooseDialog(context);
-                if (null != position) {
+        child: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              RaisedButton(
+                child: Text('普通对话框'),
+                onPressed: () async {
+                  bool sure = await showNormalDialog(context);
                   Fluttertoast.showToast(
-                      msg: position == 0 ? '中文简体' : '美国英语',
+                      msg: sure ? '点击了确定' : '点击了取消',
                       toastLength: Toast.LENGTH_SHORT,
                       gravity: ToastGravity.BOTTOM);
-                }
-              },
-            ),
-            RaisedButton(
-              child: Text('列表选择对话框'),
-              onPressed: () async {
-                int position = await showListDialog(context);
-                if (null != position) {
+                },
+              ),
+              RaisedButton(
+                child: Text('选择对话框'),
+                onPressed: () async {
+                  int position = await showChooseDialog(context);
+                  if (null != position) {
+                    Fluttertoast.showToast(
+                        msg: position == 0 ? '中文简体' : '美国英语',
+                        toastLength: Toast.LENGTH_SHORT,
+                        gravity: ToastGravity.BOTTOM);
+                  }
+                },
+              ),
+              RaisedButton(
+                child: Text('列表选择对话框'),
+                onPressed: () async {
+                  int position = await showListDialog(context);
+                  if (null != position) {
+                    Fluttertoast.showToast(
+                        msg: '$position',
+                        toastLength: Toast.LENGTH_SHORT,
+                        gravity: ToastGravity.BOTTOM);
+                  }
+                },
+              ),
+              RaisedButton(
+                child: Text('自定义dialog弹出方式和遮罩'),
+                onPressed: () async {
+                  bool sure = await showMyDialog(context);
+                  Fluttertoast.showToast(
+                      msg: sure ? '确定' : '取消',
+                      toastLength: Toast.LENGTH_SHORT,
+                      gravity: ToastGravity.BOTTOM);
+                },
+              ),
+              RaisedButton(
+                child: Text('带有复选框的dialog'),
+                onPressed: () async {
+                  int type = await showCheckBoxDialog(context);
+                  if (type == null) return;
+                  String msg;
+                  if (type == 0) {
+                    msg = '取消';
+                  } else if (type == 1) {
+                    msg = '删除（同时删除子目录）';
+                  } else {
+                    msg = '删除（不删除子目录）';
+                  }
+                  Fluttertoast.showToast(
+                      msg: msg,
+                      toastLength: Toast.LENGTH_SHORT,
+                      gravity: ToastGravity.BOTTOM);
+                },
+              ),
+              RaisedButton(
+                child: Text('底部列表弹窗'),
+                onPressed: () async {
+                  int position = await showBottomDialog(context);
                   Fluttertoast.showToast(
                       msg: '$position',
                       toastLength: Toast.LENGTH_SHORT,
                       gravity: ToastGravity.BOTTOM);
-                }
-              },
-            ),
-            RaisedButton(
-              child: Text('自定义dialog弹出方式和遮罩'),
-              onPressed: () async {
-                bool sure = await showMyDialog(context);
-                Fluttertoast.showToast(
-                    msg: sure ? '确定' : '取消',
-                    toastLength: Toast.LENGTH_SHORT,
-                    gravity: ToastGravity.BOTTOM);
-              },
-            ),
-            RaisedButton(
-              child: Text('带有复选框的dialog'),
-              onPressed: () async {
-                int type = await showCheckBoxDialog(context);
-                if (type == null) return;
-                String msg;
-                if (type == 0) {
-                  msg = '取消';
-                } else if (type == 1) {
-                  msg = '删除（同时删除子目录）';
-                } else {
-                  msg = '删除（不删除子目录）';
-                }
-                Fluttertoast.showToast(
-                    msg: msg,
-                    toastLength: Toast.LENGTH_SHORT,
-                    gravity: ToastGravity.BOTTOM);
-              },
-            ),
-            RaisedButton(
-              child: Text('底部列表弹窗'),
-              onPressed: () async {
-                int position = await showBottomDialog(context);
-                Fluttertoast.showToast(
-                    msg: '$position',
-                    toastLength: Toast.LENGTH_SHORT,
-                    gravity: ToastGravity.BOTTOM);
-              },
-            ),
-            RaisedButton(
-              child: Text('Loading弹窗'),
-              onPressed: () => showLoadingDialog(context),
-            ),
-            RaisedButton(
-              child: Text('Loading弹窗（自定义尺寸）'),
-              onPressed: () => showMyLoadingDialog(context),
-            ),
-            RaisedButton(
-              child: Text('日历选择器'),
-              onPressed: () async {
-                DateTime dateTime = await _showDatePicker(context);
-                String date = formatDate(dateTime, [yyyy, "-", mm, "-", dd,]);
-                Fluttertoast.showToast(
-                    msg: '$date',
-                    toastLength: Toast.LENGTH_SHORT,
-                    gravity: ToastGravity.BOTTOM);
-              },
-            ),
-            RaisedButton(
-              child: Text('ios风格日历选择器'),
-              onPressed: () async {
-                _showDatePickerIOS(context);//展示选择器
-                String date = formatDate(choosedTime, [yyyy, "-", mm, "-", dd,]);
-                Fluttertoast.showToast(
-                    msg: '$date',
-                    toastLength: Toast.LENGTH_SHORT,
-                    gravity: ToastGravity.BOTTOM);
-              },
-            ),
-          ],
+                },
+              ),
+              RaisedButton(
+                child: Text('Loading弹窗'),
+                onPressed: () => showLoadingDialog(context),
+              ),
+              RaisedButton(
+                child: Text('Loading弹窗（自定义尺寸）'),
+                onPressed: () => showMyLoadingDialog(context),
+              ),
+              RaisedButton(
+                child: Text('日历选择器'),
+                onPressed: () async {
+                  DateTime dateTime = await _showDatePicker(context);
+                  String date = formatDate(dateTime, [yyyy, "-", mm, "-", dd,]);
+                  Fluttertoast.showToast(
+                      msg: '$date',
+                      toastLength: Toast.LENGTH_SHORT,
+                      gravity: ToastGravity.BOTTOM);
+                },
+              ),
+              RaisedButton(
+                child: Text('ios风格日历选择器'),
+                onPressed: () async {
+                  _showDatePickerIOS(context);//展示选择器
+                  String date = formatDate(choosedTime, [yyyy, "-", mm, "-", dd,]);
+                  Fluttertoast.showToast(
+                      msg: '$date',
+                      toastLength: Toast.LENGTH_SHORT,
+                      gravity: ToastGravity.BOTTOM);
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
