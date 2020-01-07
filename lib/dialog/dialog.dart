@@ -120,7 +120,7 @@ class _DialogWidgetState extends State<DialogWidget> {
             RaisedButton(
               child: Text('ios风格日历选择器'),
               onPressed: () async {
-                DateTime dateTime = await _showDatePickerIOS(context);
+                _showDatePickerIOS(context);//展示选择器
                 String date = formatDate(choosedTime, [yyyy, "-", mm, "-", dd,]);
                 Fluttertoast.showToast(
                     msg: '$date',
