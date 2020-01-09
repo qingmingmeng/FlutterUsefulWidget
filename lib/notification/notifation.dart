@@ -23,7 +23,7 @@ class NotificationDemoState extends State<NotificationDemo>{
           setState(() {
             _msg += notification.msg;
           });
-          return true;
+          return true;//阻止冒泡，如果父控件也有NotificationListener，则父控件的监听不会生效
         },
         child: Center(
           child: Column(
