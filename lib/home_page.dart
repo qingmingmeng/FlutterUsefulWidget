@@ -9,6 +9,7 @@ import 'package:flutter_actual/event_bus/event_bus_usage.dart';
 import 'package:flutter_actual/frosted_glass/frosted_glass.dart';
 import 'package:flutter_actual/jump_animation/animation_list.dart';
 import 'package:flutter_actual/my_drawer.dart';
+import 'package:flutter_actual/notification/notifation.dart';
 import 'package:flutter_actual/progress/progress.dart';
 import 'package:flutter_actual/right_back/right_back.dart';
 import 'package:flutter_actual/search/search.dart';
@@ -145,6 +146,12 @@ class _MainHomeState extends State<MainHome>{
               child: ListTile(
                 title: Text('消息总线EventBus'),
                 onTap: () => _pageJumpWithRightBack(context,EventBusUsage()),
+              ),
+            ),
+            Card(
+              child: ListTile(
+                title: Text('消息通知Notification'),
+                onTap: () => _pageJumpWithRightBack(context,NotificationDemo()),
               ),
             ),
           ],
