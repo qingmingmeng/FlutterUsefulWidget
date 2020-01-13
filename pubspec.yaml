@@ -27,6 +27,7 @@ dependencies:
   fluttertoast: ^3.1.3 #toast
   date_format: ^1.0.8 #日期转换
   path_provider: ^1.5.1 #文件路径管理
+  dio: ^3.0.8 #网络请求
 
 dev_dependencies:
   flutter_test:

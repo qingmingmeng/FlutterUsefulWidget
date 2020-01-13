@@ -8,6 +8,7 @@ import 'package:flutter_actual/drag/drag.dart';
 import 'package:flutter_actual/event_bus/event_bus_usage.dart';
 import 'package:flutter_actual/frosted_glass/frosted_glass.dart';
 import 'package:flutter_actual/http/http_client.dart';
+import 'package:flutter_actual/http/http_dio.dart';
 import 'package:flutter_actual/jump_animation/animation_list.dart';
 import 'package:flutter_actual/my_drawer.dart';
 import 'package:flutter_actual/notification/notifation.dart';
@@ -159,6 +160,12 @@ class _MainHomeState extends State<MainHome>{
               child: ListTile(
                 title: Text('网络请求HttpClient'),
                 onTap: () => _pageJumpWithRightBack(context,HttpCallDemo()),
+              ),
+            ),
+            Card(
+              child: ListTile(
+                title: Text('网络请求(Dio库)'),
+                onTap: () => _pageJumpWithRightBack(context,HttpDioDemo()),
               ),
             ),
           ],
