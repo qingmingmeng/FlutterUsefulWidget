@@ -28,9 +28,13 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
   void initState() {
     super.initState();
     Future.delayed(Duration(seconds: 1),(){
-      Navigator.of(context).push(MaterialPageRoute(
+      //普通跳转
+      /*Navigator.of(context).push(MaterialPageRoute(
         builder: (context) => MainHome()
-      ));
+      ));*/
+      //跳转并关闭当前页面
+      Navigator.of(context).pushReplacement(MaterialPageRoute(
+          builder: (context) => MainHome()));
     });
 //    _controller = AnimationController(vsync: this, duration: Duration(milliseconds: 2000));
 //    _animation = Tween(begin: 1.0, end: 1.0).animate(_controller);
